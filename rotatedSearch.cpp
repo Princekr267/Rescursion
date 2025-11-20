@@ -25,20 +25,20 @@ int rotatedSearch(int arr[], int si, int  ei, int tar){
     if(arr[mid]==tar) return mid;
     if (arr[si]<=arr[mid]){
         if(arr[si]<=tar && tar<=arr[mid]){
-            rotatedSearch(arr, si, mid-1, tar);
+            return rotatedSearch(arr, si, mid-1, tar);
         } else{
-            rotatedSearch(arr, mid+1, ei, tar);
+            return rotatedSearch(arr, mid+1, ei, tar);
         }
     } else{
         if(arr[mid]<=tar && tar<=arr[ei]){
-            rotatedSearch(arr, mid+1, ei, tar);
+            return rotatedSearch(arr, mid+1, ei, tar);
         } else{
-            rotatedSearch(arr, si, mid-1, tar);
+            return rotatedSearch(arr, si, mid-1, tar);
         }
     }
 }
 int main(){
     int arr[]={4,5,0,1,2};
-    cout<<rotatedSearch(arr, 0, 4, 0);
+    cout<<rotatedSearch(arr, 0, 4, 4);
     return 0;
 }
